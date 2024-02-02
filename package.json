@@ -1,0 +1,16 @@
+{
+  "name": "webrtc-server",
+  "version": "1.0.0",
+  "description": "Android Health Care Video Calling System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Yashveer Singh",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.2",
+    "websocket": "^1.0.34"
+  }
+}
