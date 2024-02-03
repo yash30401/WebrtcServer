@@ -3,7 +3,7 @@ const Socket = require("websocket").server
 const server = http.createServer(()=>{})
 
 server.listen(2000,()=>{
-    
+    console.log("Server Started On Port 2000")
 })
 
 const webSocket = new Socket({httpServer:server})
