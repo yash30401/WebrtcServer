@@ -2,7 +2,7 @@ const http = require("http")
 const Socket = require("websocket").server
 const server = http.createServer(()=>{})
 
-server.listen(process.env.PORT || 2000,()=>{
+server.listen(process.env.PORT,()=>{
     console.log("Server Started On Port 2000")
 })
 
