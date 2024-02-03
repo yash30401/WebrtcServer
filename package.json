@@ -12,5 +12,8 @@
   "dependencies": {
     "nodemon": "^3.0.2",
     "websocket": "^1.0.34"
+  },
+  "engines": {
+    "node" : "20.9.0"
   }
 }
