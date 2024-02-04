@@ -13,7 +13,7 @@
   },
   "author": "Yashveer Singh",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "nodemon": "^3.0.3",
     "websocket": "^1.0.34"
   }
