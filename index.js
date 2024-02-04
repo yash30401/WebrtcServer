@@ -1,6 +1,9 @@
 const http = require("http")
 const Socket = require("websocket").server
-const server = http.createServer(()=>{})
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('WebSocket server is running.');
+  });
 
 let PORT = process.env.PORT || 2000
 
