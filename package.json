@@ -4,7 +4,8 @@
   "description": "Android Health Care Video Calling System",
   "main": "index.js",
   "engines": {
-    "node": "12.11.1"
+    "node": "20.x",
+    "npm": "10.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
