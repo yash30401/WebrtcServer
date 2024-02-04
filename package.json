@@ -62,5 +62,13 @@
     "utf-8-validate": "^5.0.10",
     "yaeti": "^0.0.6",
     "yallist": "^4.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yash30401/WebrtcServer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yash30401/WebrtcServer/issues"
+  },
+  "homepage": "https://github.com/yash30401/WebrtcServer#readme"
 }
