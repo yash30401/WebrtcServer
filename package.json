@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Android Health Care Video Calling System",
   "main": "index.js",
+  "engines": {
+    "node": "12.11.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
@@ -12,8 +15,5 @@
   "dependencies": {
     "nodemon": "^3.0.3",
     "websocket": "^1.0.34"
-  },
-  "engines": {
-    "node": "20.9.0"
   }
 }
