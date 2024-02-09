@@ -94,6 +94,17 @@ webSocket.on('request',(req)=>{
                 }
             break
 
+            case "call_ended":
+            let userToNotifyCallEnded = findUser(data.target);
+
+            if (userToNotifyCallEnded) {
+        userToNotifyCallEnded.conn.send(JSON.stringify({
+            type: "call_ended",
+            name: data.name
+        }));
+        }
+        break;
+
 
         }
 
