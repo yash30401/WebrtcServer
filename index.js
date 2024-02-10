@@ -25,7 +25,7 @@ webSocket.on('request',(req)=>{
         const user = findUser(data.name)
        
         switch(data.type){
-            case "store_user":
+            case "STORE_USER":
                 if(user !=null){
                     //our user exists
                     connection.send(JSON.stringify({
@@ -41,49 +41,49 @@ webSocket.on('request',(req)=>{
                 users.push(newUser)
             break
 
-            case "start_call":
+            case "START_CALL":
                 let userToCall = findUser(data.target)
 
                 if(userToCall){
                     connection.send(JSON.stringify({
-                        type:"call_response", data:"user is ready for call"
+                        type:"CALL_RESPONSE", data:"user is ready for call"
                     }))
                 } else{
                     connection.send(JSON.stringify({
-                        type:"call_response", data:"user is not online"
+                        type:"CALL_RESPONSE", data:"user is not online"
                     }))
                 }
 
             break
             
-            case "create_offer":
+            case "CREATE_OFFER":
                 let userToReceiveOffer = findUser(data.target)
 
                 if (userToReceiveOffer){
                     userToReceiveOffer.conn.send(JSON.stringify({
-                        type:"offer_received",
+                        type:"OFFER_RECIEVED",
                         name:data.name,
                         data:data.data.sdp
                     }))
                 }
             break
                 
-            case "create_answer":
+            case "CREATE_ANSWER":
                 let userToReceiveAnswer = findUser(data.target)
                 if(userToReceiveAnswer){
                     userToReceiveAnswer.conn.send(JSON.stringify({
-                        type:"answer_received",
+                        type:"ANSWER_RECIEVED",
                         name: data.name,
                         data:data.data.sdp
                     }))
                 }
             break
 
-            case "ice_candidate":
+            case "ICE_CANDIDATE":
                 let userToReceiveIceCandidate = findUser(data.target)
                 if(userToReceiveIceCandidate){
                     userToReceiveIceCandidate.conn.send(JSON.stringify({
-                        type:"ice_candidate",
+                        type:"ICE_CANDIDATE",
                         name:data.name,
                         data:{
                             sdpMLineIndex:data.data.sdpMLineIndex,
@@ -94,12 +94,12 @@ webSocket.on('request',(req)=>{
                 }
             break
 
-            case "call_ended":
+            case "CALL_ENDED":
             let userToNotifyCallEnded = findUser(data.target);
 
             if (userToNotifyCallEnded) {
         userToNotifyCallEnded.conn.send(JSON.stringify({
-            type: "call_ended",
+            type: "CALL_ENDED",
             name: data.name
         }));
         }
